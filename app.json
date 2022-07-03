@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "carshair-assessment",
+    "slug": "carshair-assessment",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
