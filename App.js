@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import HomePage from "./screens/HomePage";
+import DetailsPage from "./screens/DetailsPage"; 
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "transparent"
+  }
+};
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Car rental app</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer 
+      theme={theme}
+    >
+      <Stack.Navigator 
+        screenOptions={{ headerShown: false }}
+        initialRouteName="HomePage"
+      >
+        <Stack.Screen 
+          name="HomePage" 
+          component={HomePage}
+        />
+        <Stack.Screen 
+          name="DetailsPage" 
+          component={DetailsPage}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App;
