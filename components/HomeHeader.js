@@ -19,7 +19,9 @@ const HomeHeader = ( {
   filterMinPrice,
   filterMaxPrice,
   filterAvailable,
-  isModalOpen } ) => {
+  isModalOpen,
+  setSortBy,
+  setSortOrder } ) => {
   return (
     <View>
       <View style={{
@@ -93,6 +95,8 @@ const HomeHeader = ( {
             filterMaxPrice={filterMaxPrice}
             filterAvailable={filterAvailable}
             isModalOpen={isModalOpen}
+            setSortBy={setSortBy}
+            setSortOrder={setSortOrder}
           />
         </Modal>
       </View>

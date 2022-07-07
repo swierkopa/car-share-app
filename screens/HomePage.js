@@ -17,6 +17,8 @@ const HomePage = () => {
   let [filterMinPrice, setFilterMinPrice] = useState('');
   let [filterMaxPrice, setFilterMaxPrice] = useState('');
   let [filterAvailable, setFilterAvailable] = useState('');
+  let [sortBy, setSortBy] = useState('None');
+  let [sortOrder, setSortOrder] = useState('None');
 
   //fetches all car data from API
   useEffect(() => {
@@ -48,6 +50,8 @@ const HomePage = () => {
   }
 
   const onSearch = () => {
+    console.log('sortBy:', sortBy);
+    console.log('sortOrder:', sortOrder);
     setIsModalOpen(false);
     let filteredData =[];
 
@@ -62,7 +66,9 @@ const HomePage = () => {
         filteredData.push([...allData][i])
       }
 
-      setFilteredData(filteredData);
+      const sortedFilteredData = sortFilteredDataBy(filteredData, sortBy, sortOrder);
+
+      setFilteredData(sortedFilteredData);
     }
   }
 
@@ -90,6 +96,30 @@ const HomePage = () => {
     else if (minPrice) return (carPrice >= minPrice);
     else return (carPrice <= maxPrice);
   }
+
+  const sortFilteredDataBy = (filteredData, sortCriteria, order) => {
+    if (sortCriteria === "PRICE" && order === "LOW TO HIGH") {
+      filteredData.sort((a, b) => {
+        const aPriceNum = Number(a.price.slice(1));
+        const bPriceNum = Number(b.price.slice(1));
+        return aPriceNum - bPriceNum;
+      })
+    }
+    else if (sortCriteria === "PRICE" && order === "HIGH TO LOW") {
+      filteredData.sort((a, b) => {
+        const aPriceNum = Number(a.price.slice(1));
+        const bPriceNum = Number(b.price.slice(1));
+        return bPriceNum - aPriceNum;
+      })
+    }
+    else if (sortCriteria === "YEAR" && order === "LOW TO HIGH") {
+      filteredData.sort((a, b) => a.car_model_year - b.car_model_year);
+    }
+    else if (sortCriteria === "YEAR" && order === "HIGH TO LOW") {
+      filteredData.sort((a, b) => b.car_model_year - a.car_model_year);
+    }
+    return filteredData;
+  };
 
   return (
     <SafeAreaView style={{ flex: 1}}>
@@ -122,6 +152,8 @@ const HomePage = () => {
                 filterMaxPrice={filterMaxPrice}
                 filterAvailable={filterAvailable}
                 isModalOpen={isModalOpen}
+                setSortBy={setSortBy}
+                setSortOrder={setSortOrder}
               />}
           />
         </View>

@@ -1,5 +1,7 @@
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import { useState, useEffect } from 'react';
+import SortByButtonGroup from './SortByButtonGroup';
+import SortOrderButtonGroup from './SortOrderButtonGroup';;
 
 const FilterModal = ( {
   onSearch,
@@ -18,12 +20,15 @@ const FilterModal = ( {
   filterMinPrice,
   filterMaxPrice,
   filterAvailable,
-  isModalOpen
+  isModalOpen,
+  setSortBy,
+  setSortOrder,
 }) => {
+
   return (
     <TouchableOpacity
     style={{
-      height: '65%',
+      height: '100%',
       width: '100%',
       paddingTop: 10,
       backgroundColor: '#101010',
@@ -136,9 +141,27 @@ const FilterModal = ( {
       </View>
       <View style={{
         flex: 1,
+        padding: 10
+      }}>
+        <SortByButtonGroup 
+          buttons={['None', 'PRICE', 'YEAR']}
+          setSortBy={setSortBy}
+          />
+      </View>
+      <View style={{
+        flex: 1,
+        padding: 10,
+        bottom: -50
+      }}>
+        <SortOrderButtonGroup 
+          buttons={['None', 'LOW TO HIGH', 'HIGH TO LOW']}
+          setSortOrder={setSortOrder}/>
+      </View>
+      <View style={{
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        bottom: -45,
+        bottom: -165,
       }}>
         <TouchableOpacity
           style={{
@@ -151,8 +174,7 @@ const FilterModal = ( {
           <View style={{
             flex: 1,
             alignItems: 'center',
-            justifyContent: 'center',
-          }}>
+            justifyContent: 'center',}}>
             <Text
               style={{
                 color: 'white',
