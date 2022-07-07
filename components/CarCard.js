@@ -19,7 +19,7 @@ const CarCard = ({ data }) => {
     >
       <View style={{
         width: '100%',
-        height: 250
+        height: 300
       }}
       >
         <Image
@@ -27,18 +27,15 @@ const CarCard = ({ data }) => {
           resizeMode='cover'
           style={{
             width: '100%',
-            height: '100%',
+            height: '60%',
             borderTopLeftRadius: 14,
             borderTopRightRadius: 14,
           }} 
         />
         <LikeButton />
-      </View>
-      <View>
         <CarInfo data={ data }/>
-      </View>
-      <View>
         <CarPrice data={ data }/>
+        
       </View>
     </View>
   )
