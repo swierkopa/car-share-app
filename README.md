@@ -1,6 +1,7 @@
 # Assumptions Made:
 1) Although it wasn't mentioned as a requirement, I thought adding a sorting feature for price/model year would be helpful for users to find the car they want
 2) When user clicks on Filter button at the top of the page, I assumed that the user wants to try new search criteria. Therefore I reset all criteria to default values.
+3) Using the image API, I gave each car an image depending on the car id.
 
 # How to bring app up locally:
 1) Fork and clone repo to your machine.
