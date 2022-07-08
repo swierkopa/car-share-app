@@ -14,6 +14,7 @@ Please don't hesitate to reach out to me if you have any troubles opening the ap
 
 # Feedback:
 Time taken to complete: 12-15 hours
+
 Level of difficulty: 5/10
 
 This assessment was a lot of fun! Definitely prefer this style over a Leetcode style assessment as it allows for more creativity with solutions and tests applicable skills that will be used in the actual role. The requirements were clear and easy to understand.
