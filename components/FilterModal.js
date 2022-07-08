@@ -1,5 +1,4 @@
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
-import { useState, useEffect } from 'react';
+import { View, TouchableOpacity, TextInput } from 'react-native';
 import SearchBar from './SearchBar';
 import SortByButtonGroup from './SortByButtonGroup';
 import SortOrderButtonGroup from './SortOrderButtonGroup';
@@ -16,7 +15,6 @@ const FilterModal = ( {
   setFilterColor,
   setFilterMinPrice,
   setFilterMaxPrice,
-  setFilterAvailable,
   setSortBy,
   setSortOrder,
 }) => {
@@ -38,14 +36,6 @@ const FilterModal = ( {
       <SearchBar 
         setFilterName={setFilterName}
       />
-      {/* <View>
-        <Text
-          style={{
-            color: 'white',
-            fontFamily: 'ManropeExtraBold',}}>
-          Other criteria
-        </Text>
-      </View> */}
       <YearFilter 
         setFilterMinYear={setFilterMinYear}
         setFilterMaxYear={setFilterMaxYear}

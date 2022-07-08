@@ -1,5 +1,5 @@
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import { useNavigation, useState, useEffect } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 import LikeButton from './LikeButton';
 import CarInfo from './CarInfo';
 import CarPrice from './CarPrice';

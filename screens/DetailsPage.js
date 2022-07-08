@@ -3,9 +3,9 @@ import { FocusedStatusBar } from '../components';
 import CarDetails from '../components/CarDetails';
 import CarHeader from '../components/CarHeader';
 
-const DetailsPage = ( { route, navigation } ) => {
+const DetailsPage = ( { route } ) => {
+  //data for which car was selected
   const { detailsData } = route.params;
-  console.log(detailsData);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

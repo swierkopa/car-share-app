@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, Modal } from 'react-native';
 import FilterModal from './FilterModal';
 
 const HomeHeader = ( { 
@@ -12,13 +12,6 @@ const HomeHeader = ( {
   setFilterMaxPrice,
   setFilterAvailable,
   setIsModalOpen, 
-  filterName,
-  filterMinYear,
-  filterMaxYear,
-  filterColor,
-  filterMinPrice,
-  filterMaxPrice,
-  filterAvailable,
   isModalOpen,
   setSortBy,
   setSortOrder } ) => {
@@ -114,13 +107,6 @@ const HomeHeader = ( {
             setFilterMaxPrice={setFilterMaxPrice}
             setFilterAvailable={setFilterAvailable}
             setIsModalOpen={setIsModalOpen}
-            filterName={filterName}
-            filterMinYear={filterMinYear}
-            filterMaxYear={filterMaxYear}
-            filterColor={filterColor}
-            filterMinPrice={filterMinPrice}
-            filterMaxPrice={filterMaxPrice}
-            filterAvailable={filterAvailable}
             isModalOpen={isModalOpen}
             setSortBy={setSortBy}
             setSortOrder={setSortOrder}

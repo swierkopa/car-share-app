@@ -1,4 +1,4 @@
-import { TouchableOpacity, View, Text, Image } from 'react-native'
+import { TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
 const LikeButton = () => {

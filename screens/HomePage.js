@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, SafeAreaView, FlatList, Text } from 'react-native';
+import { View, SafeAreaView, FlatList } from 'react-native';
 import { HomeHeader, FocusedStatusBar, CarCard } from '../components';
 
 const url = "https://myfakeapi.com/api/cars/";
@@ -38,20 +38,23 @@ const HomePage = () => {
     }, []
   ); 
 
+
+
+  //Reset filters to default after clicking on Filters button
   const onFilters = () => {
     setIsModalOpen(true);
-
     setFilterName('');
     setFilterMinYear('');
     setFilterMaxYear('');
     setFilterColor('');
     setFilterMinPrice('');
     setFilterMaxPrice('');
+    setSortBy('None');
+    setSortOrder('None');
   }
 
+  //Filters through allData to find cars that meet requirements
   const onSearch = () => {
-    console.log('sortBy:', sortBy);
-    console.log('sortOrder:', sortOrder);
     setIsModalOpen(false);
     let filteredData =[];
 
@@ -72,6 +75,7 @@ const HomePage = () => {
     }
   }
 
+  //Following functions are part of onSearch above
   const doesNameMatch = (object, word) => {
     return (word === '' || 
     object.car.toLowerCase().includes(word.toLowerCase()) ||
@@ -144,13 +148,6 @@ const HomePage = () => {
                 setFilterMaxPrice={setFilterMaxPrice}
                 setFilterAvailable={setFilterAvailable}
                 setIsModalOpen={setIsModalOpen}
-                filterName={filterName}
-                filterMinYear={filterMinYear}
-                filterMaxYear={filterMaxYear}
-                filterColor={filterColor}
-                filterMinPrice={filterMinPrice}
-                filterMaxPrice={filterMaxPrice}
-                filterAvailable={filterAvailable}
                 isModalOpen={isModalOpen}
                 setSortBy={setSortBy}
                 setSortOrder={setSortOrder}

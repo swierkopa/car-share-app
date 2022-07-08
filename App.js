@@ -1,7 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Text } from 'react-native'
 import HomePage from "./screens/HomePage";
 import DetailsPage from "./screens/DetailsPage"; 
 
@@ -25,10 +24,6 @@ const App = () => {
     ManropeLight: require('./assets/fonts/Manrope-Light.ttf'),
     Pacifico: require('./assets/fonts/Pacifico-Regular.ttf'),
   })
-
-  if (!loaded) {
-    return <Text>Loading...</Text>;
-  }
 
   return (
     <NavigationContainer 

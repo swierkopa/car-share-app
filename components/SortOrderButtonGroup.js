@@ -7,7 +7,6 @@ const SortOrderButtonGroup = ({ buttons, setSortOrder }) => {
   const handleClick = (index, buttonLabel) => {
     setClickedId(index);
     setSortOrder(buttonLabel);
-    console.log(buttonLabel);
   }
 
   return (
