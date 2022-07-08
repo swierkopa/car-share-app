@@ -23,39 +23,66 @@ const HomeHeader = ( {
   setSortBy,
   setSortOrder } ) => {
   return (
-    <View>
-      <View style={{
+    <View
+      style={{
         flex: 1,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        left: 30,
-        top: 15,
-        width: '100%',
+        flexDirection: 'row',
+        height: 150,
       }}>
-        <Text style={{
-          color: 'white',
-          fontFamily: 'Pacifico',
-          fontSize: 20
+      <View
+        style={{
+          flex: 3,
         }}>
-          Rent-a-Ride
-        </Text>
+        <View 
+          style={{
+            flex: 3,
+            alignItems: 'center',
+            justifyContent: 'center',
+            top: 5,
+            transform: [{
+              rotate: '-5deg'
+            }]
+          }}>
+          <Text 
+            style={{
+            color: 'white',
+            fontFamily: 'Pacifico',
+            fontSize: 30,
+          }}>
+            Rent-a-Ride
+          </Text>
+        </View>
+        <View
+          style={{
+            flex: 2,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              color: 'white',
+              fontFamily: 'ManropeMedium',
+              fontSize: 15,
+              left: 5,
+              top: -10,
+            }}>
+            Find your next adventure!
+          </Text>
+        </View>
       </View>
 
-      
-      <View style={{
-        flex: 1,
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        right: 15,
-        width: '100%',
-        height: 100,
-      }}>
+      <View 
+        style={{
+          flex: 2,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <TouchableOpacity
           style={{
             backgroundColor: '#7b68ee',
             borderRadius: 25,
             height: 50,
-            width: 150,
+            width: 100
           }}
           onPress={onFilters}>
           <View style={{
