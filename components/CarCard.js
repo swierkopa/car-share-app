@@ -1,4 +1,4 @@
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation, useState, useEffect } from '@react-navigation/core';
 import LikeButton from './LikeButton';
 import CarInfo from './CarInfo';
@@ -7,10 +7,14 @@ import CarPrice from './CarPrice';
 
 const CarCard = ({ data }) => {
   const navigation = useNavigation();
-  const imgUrl = `https://picsum.photos/id/${data.id}/200`; 
+  const imgUrl = `https://picsum.photos/id/${data.id}/200`;
+  const detailsData = {...data, imgUrl: imgUrl} 
 
   return (
-    <View style={{
+    <TouchableOpacity
+      onPress={() => navigation.navigate("DetailsPage", { detailsData })}
+    >
+      <View style={{
       backgroundColor: '#383838',
       borderRadius: 14,
       marginBottom: 5,
@@ -33,11 +37,25 @@ const CarCard = ({ data }) => {
           }} 
         />
         <LikeButton />
-        <CarInfo data={ data }/>
-        <CarPrice data={ data }/>
-        
+        <View
+          style={{
+            margin: 10,
+          }}>
+          <CarInfo data={ data }/>
+        </View>
+
+        <View
+          style={{
+            alignItems: "flex-end",
+            justifyContent: "flex-end",
+            right: 10,
+            bottom: -30,
+          }}>
+          <CarPrice data={ data }/>
+        </View>       
       </View>
     </View>
+    </TouchableOpacity>
   )
 }
 

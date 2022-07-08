@@ -1,7 +1,7 @@
 import { TouchableOpacity, View, Text, Image } from 'react-native'
 import React from 'react'
 
-const LikeButton = ( heartUrl, handlePress, ...props) => {
+const LikeButton = () => {
   return (
     <TouchableOpacity
       style={{
@@ -15,7 +15,6 @@ const LikeButton = ( heartUrl, handlePress, ...props) => {
         top: 10,
         right: 10,
       }}
-      onPress={handlePress}
     >
       <Image 
         source={require('../assets/heart.png')}
